@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
+#define NTENTATIVAS 5
 
 int main()
 {
@@ -10,10 +11,10 @@ int main()
     printf("******************************************\n");
 
 	
-	for(int i = 1; i <= 3; i++){ 
+	for(int i = 1; i <= NTENTATIVAS; i++){ 
 	    int numerosecreto = 42;
 	    int chute;
-	    printf("\nTentativa %d de 3", i);
+	    printf("\nTentativa %d de %d", i, NTENTATIVAS);
 	    printf("\nInforme seu chute: ");
 	    
 	    scanf("%d", &chute);
