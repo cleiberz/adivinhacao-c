@@ -27,6 +27,7 @@ int main()
 	    if(acertou){
 	        printf("Parabéns! Você acertou.\n");
 	        printf("Jogue de novo, você é um bom jogador.\n");
+	        break;
 	    }
 	    else {
 	    	if (errouAbaixo){
@@ -43,5 +44,5 @@ int main()
 	
 	
 	}
-	//return (0);
+	printf("\n*****  FIM DO JOGO  *****");
 }
