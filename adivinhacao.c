@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
-#define NTENTATIVAS 5
+
 
 int main()
 {
@@ -11,27 +11,42 @@ int main()
     printf("******************************************\n");
 
 	
-	for(int i = 1; i <= NTENTATIVAS; i++){ 
-	    int numerosecreto = 42;
-	    int chute;
-	    printf("\nTentativa %d de %d", i, NTENTATIVAS);
+	int numerosecreto = 42;
+	int chute;
+	int tentativa = 0;
+	int desistir = 0;
+	while (chute != numerosecreto){
+		 
+	    printf("\nTentativa de número %d", tentativa+1);
+	    tentativa++;
+	    printf("\nPara desistir digite 0 ou");
 	    printf("\nInforme seu chute: ");
 	    
 	    scanf("%d", &chute);
+	    
+	    if (chute != 0){
+		
 	    printf("Seu chute foi %d.\n", chute);
+	    }
+	    
+	    int acertou = chute == numerosecreto;
+		//int errouAcima = chute > numerosecreto;
+		int errouAbaixo = chute < numerosecreto;
+		
+		if (chute == 0){
+			
+			printf("Após %d tentativa(s) você desistiu do jogo!", tentativa-1);
+			break;
+		}
 	    
 	    if (chute < 0 ){
-	    	i--;
 	    	continue; //aqui ele vai voltar para o loop imediatamente.
 		}
 	    
-	    int acertou = chute == numerosecreto;
-	    int errouAcima = chute > numerosecreto;
-	    int errouAbaixo = chute < numerosecreto;
-	
 	   
 	    if(acertou){
-	        printf("Parabéns! Você acertou.\n");
+	    	
+	        printf("Parabéns! Você acertou em %d tentativa(s).\n", tentativa);
 	        printf("Jogue de novo, você é um bom jogador.\n");
 	        break;
 	    }
@@ -44,6 +59,8 @@ int main()
 	        
 	        printf("Não desanime, tente de novo.\n");
 	    }
+	
+	tentativa++;
 	    
 	printf("\n*****  FIM DO JOGO  *****");
 }
