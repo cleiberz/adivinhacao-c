@@ -30,20 +30,15 @@ int main()
 	        printf("Jogue de novo, você é um bom jogador.\n");
 	        break;
 	    }
-	    else {
-	    	if (errouAbaixo){
+	    else if (errouAbaixo){
 	    		printf("Você errou! Seu chute foi menor que o número secreto.\n");
 			}
-			if (errouAcima){
+		else {
 				printf("Você errou! Seu chute foi maior que o número secreto.\n");
 			}
 	        
 	        printf("Não desanime, tente de novo.\n");
 	    }
 	    
-	    
-	
-	
-	}
 	printf("\n*****  FIM DO JOGO  *****");
 }
