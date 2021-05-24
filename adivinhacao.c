@@ -20,6 +20,11 @@ int main()
 	    scanf("%d", &chute);
 	    printf("Seu chute foi %d.\n", chute);
 	    
+	    if (chute < 0 ){
+	    	i--;
+	    	continue; //aqui ele vai voltar para o loop imediatamente.
+		}
+	    
 	    int acertou = chute == numerosecreto;
 	    int errouAcima = chute > numerosecreto;
 	    int errouAbaixo = chute < numerosecreto;
